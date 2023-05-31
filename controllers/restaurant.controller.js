@@ -102,7 +102,7 @@ const createRestaurant= expressAsyncHandler(async (req, res) => {
       // Find restaurants based on the search criteria and include the associated address
       const restaurants = await Restaurant.findAll({
         where: searchCriteria,
-        include: { model: Address,as:Address.tableName}
+        include: { model: Address, as: 'address'}
       });
   
       res.status(200).send({ message: 'Restaurants found successfully', data: restaurants });
