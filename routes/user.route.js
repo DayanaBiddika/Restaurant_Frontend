@@ -10,9 +10,11 @@ const { registerUser, loginUser} = require("../middlewares/users.middlewares");
 
 //import controllers from user controller
 
-const {getUsers,deleteRestaurant}=require("../controllers/user.controller");
+const {getUsers,deleteRestaurant, updateRestaurant}=require("../controllers/user.controller");
 
 const verifyAdminToken = require("../middlewares/verifyAdminToken");
+
+const verifyOwnerToken=require("../middlewares/verifyOwnerToken")
 
 
 
@@ -27,8 +29,14 @@ userApp.post("/login",loginUser)
 
 userApp.get("/get-users",getUsers)
 
-//delete user
+//delete restaurant
 userApp.delete("/delete-restaurant/:id",verifyAdminToken,deleteRestaurant)
+
+//update restaurant
+userApp.put("/update-restaurant/:name",verifyOwnerToken,updateRestaurant)
+
+
+
 
 
 //export

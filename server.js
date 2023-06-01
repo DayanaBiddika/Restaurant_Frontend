@@ -9,6 +9,7 @@ const restaurantApp=require('./routes/restaurant.route')
 
 //import db from index.js
 const db=require('./models/index')
+
 //import datatypes
 const {DataTypes}=require('sequelize')
 

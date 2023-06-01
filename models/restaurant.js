@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Restaurant extends Model {
     /**
@@ -11,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.Address.hasMany(Restaurant,{foreignKey:"addressId"});
-      Restaurant.belongsTo(models.Address,{foreignKey:"addressId", as:'address'})
+      Restaurant.belongsTo(models.Address,{foreignKey:"addressId"})
       // define association here
     }
   }
@@ -27,7 +28,9 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: DataTypes.DATE,
     createdBy: DataTypes.STRING,
     updatedAt: DataTypes.DATE,
-    updatedBy: DataTypes.STRING
+    updatedBy: DataTypes.STRING,
+    deletedAt:DataTypes.DATE,
+    deletedBy:DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Restaurant',

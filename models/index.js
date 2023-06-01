@@ -37,11 +37,14 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-// Add the User model to the exports
-db.User = require('./user')(sequelize, Sequelize);
+// // Add the User model to the exports
+// db.User = require('./user')(sequelize, Sequelize);
 
-//add the restaurant model to the exports
-db.Restaurant=require('./restaurant')(sequelize,Sequelize)
+// //add the restaurant model to the exports
+// db.Restaurant=require('./restaurant')(sequelize,Sequelize)
+
+// //add the restaurant model to the exports
+// db.Address=require('./address')(sequelize,Sequelize)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
