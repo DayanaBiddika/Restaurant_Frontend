@@ -7,9 +7,9 @@ POST http://localhost:2828/user-api/register-user
 Content-Type: application/json
 
 {
-    "firstName":"teja",
-    "lastName":"bolloju",
-    "email":"teja@gmail.com",
+    "firstName":"prasad",
+    "lastName":"biddika",
+    "email":"prasad@gmail.com",
     "role":"restaurantOwner",
     "password":"teja"
 }
@@ -39,7 +39,7 @@ Content-Type: application/json
 GET http://localhost:2828/restaurant-api/get-restaurant/1/3
 
 ###search restaurants on criteria
-GET http://localhost:2828/restaurant-api/search-restaurant?city=hi
+GET http://localhost:2828/restaurant-api/search-restaurant?country=Ame
 
 ###DELETE RESTAURANT
 DELETE http://localhost:2828/user-api/delete-restaurant/1
