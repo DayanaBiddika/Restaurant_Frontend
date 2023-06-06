@@ -102,7 +102,7 @@ const loginUser= expressAsyncHandler(async (req, res) => {
       console.log(token)
       // Send the token and user information in the response
       res.send({
-        message: 'Login successful',
+        message: 'success',
         token,
         user: {
           id: user.id,

@@ -10,8 +10,8 @@ Content-Type: application/json
     "firstName":"prasad",
     "lastName":"biddika",
     "email":"prasad@gmail.com",
-    "role":"restaurantOwner",
-    "password":"teja"
+    "role":"user",
+    "password":"prasad"
 }
 
 ###LOGIN

@@ -15,15 +15,26 @@ const {DataTypes}=require('sequelize')
 
 const exp=require('express');
 
+const cors=require("cors")
+
+
+
+
 
 const app=express();
 // Middleware
 app.use(express.json());
 
+app.use(cors())
+
 require('dotenv').config()
 
 const PORT=process.env.PORT||2828;
 app.listen(PORT,()=>console.log(`http server running on ${PORT}....`))
+
+ //connecting build of react app to server of backend
+ const path=require("path")
+ app.use(express.static(path.join(__dirname,'../build')))
 
 //calling user
 let User=db.User
@@ -38,6 +49,11 @@ app.use("/user-api", userApp);
 //path middleware for restaurant
 
 app.use("/restaurant-api",restaurantApp)
+
+//page refresh
+app.use((req,res)=>{
+  res.sendFile(path.join(__dirname,"../build/index.html"))
+})
 
 // invalid path
 app.use("*", (req, res) => {
